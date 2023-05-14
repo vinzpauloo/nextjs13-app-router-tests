@@ -16,7 +16,7 @@ const Landing = (props: any) => {
     queryFn: getPosts,
     initialData: props,
     onSuccess: (data: any) => {
-      console.log(`SUCCESS`, data);
+      console.log(`CLIENT FETCH`, data);
       setPostData(data);
     },
     onError: (e: any) => {
@@ -26,6 +26,8 @@ const Landing = (props: any) => {
       Object.keys(props).length <= 0 ||
       (Array.isArray(props) && props.length === 0),
   });
+
+  console.log(data?.props);
 
   return (
     <Container maxWidth={false} disableGutters sx={{ position: "relative" }}>
@@ -45,7 +47,12 @@ const Landing = (props: any) => {
             height: "20dvh",
           }}
         >
-          <Typography color="error">TEST</Typography>
+          {data?.props &&
+            data?.props.map((post: any, index: number) => (
+              <Typography key={index} color="error">
+                {post.title}
+              </Typography>
+            ))}
         </Box>
         <Box
           sx={{
