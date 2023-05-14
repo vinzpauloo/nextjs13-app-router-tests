@@ -6,8 +6,8 @@ import { Inter } from "next/font/google";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 // ** Lib Imports
-import { MuiSetup } from "@/lib/MuiSetup";
-import QueryProvider from "@/lib/QueryProvider";
+import { MuiSetup } from "@/providers/MuiSetup";
+import QueryProvider from "@/providers/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

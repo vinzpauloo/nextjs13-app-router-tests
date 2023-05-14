@@ -1,21 +1,22 @@
 // ** Component Imports
-import { Home } from "../components/Home";
-import Header from "@/components/Header";
+import Header from "@/components/Home/Header";
 
 // ** Services Imports
 import { usePosts } from "@/services/api/getPosts";
 
 // ** Lib Imports
-import Landing from "@/app/Landing";
+import Landing from "@/components/Home/Home";
 
 export default async function Main() {
   const { getPosts } = usePosts();
 
   const initialData = await getPosts();
 
+  console.log(initialData);
+
   return (
     <main>
-      <Landing props={initialData} />
+      <Landing />
     </main>
   );
 }

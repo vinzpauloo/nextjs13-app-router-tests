@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useGlobalStore } from "@/zustand/global-store";
+import { useGlobalStore } from "@/zustand/store";
 
 const DashboardContent = () => {
   const { postData } = useGlobalStore();

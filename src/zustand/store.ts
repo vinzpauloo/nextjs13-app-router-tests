@@ -1,11 +1,20 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
-interface StoreProps {
-    title: string;
-    rowData: [],
-}
+type GlobalState = {
+  // Defined state properties
+  postData: [];
+  title: string;
 
-export const useStore = create<StoreProps>((set) => ({
-    title: "",
-    rowData: [],
-}))
+  // Defined actions
+  setPostData: (postData: [] | undefined) => void;
+  // Functions
+};
+
+export const useGlobalStore = create<GlobalState>((set) => ({
+  // Define initial state
+  postData: [],
+  title: "",
+  // Define actions
+  setPostData: (postData) => set({ postData }),
+  // Functions
+}));
