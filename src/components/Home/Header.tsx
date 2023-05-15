@@ -1,3 +1,4 @@
+"use client";
 // ** React Imports
 import React from "react";
 
@@ -16,9 +17,18 @@ import {
   Typography,
 } from "@mui/material";
 
+import { useGlobalStore } from "@/zustand/store";
+
 // ** Top Level Component
 const Header = () => {
   const router = useRouter();
+  const { postData, setTitle, title } = useGlobalStore();
+
+  React.useEffect(() => {
+    setTitle("TESTING ZUSTAND");
+  }, []);
+
+  console.log(`Header`, title);
 
   const [headerBg, setHeaderBg] = React.useState("transparent");
 

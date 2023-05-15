@@ -27,7 +27,12 @@ const Landing = (props: any) => {
       (Array.isArray(props) && props.length === 0),
   });
 
-  console.log(data?.props);
+  console.log(`SERVER FETCH`, data?.props);
+  console.log(`HOME TITLE`, title);
+
+  React.useEffect(() => {
+    setPostData(data?.props);
+  }, [data]);
 
   return (
     <Container maxWidth={false} disableGutters sx={{ position: "relative" }}>
