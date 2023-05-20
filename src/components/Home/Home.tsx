@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { usePosts } from "@/services/api/getPosts";
 import { useGlobalStore } from "@/zustand/store";
 
-const Landing = (props: any) => {
+const Landing = (props: any, { params }: any) => {
   const { postData, setPostData, title } = useGlobalStore();
 
   const { getPosts } = usePosts();

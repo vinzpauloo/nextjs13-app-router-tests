@@ -103,7 +103,11 @@ const Header = () => {
         >
           Log in
         </Button>
-        <Button variant="contained" sx={styles.signUpButton}>
+        <Button
+          variant="contained"
+          sx={styles.signUpButton}
+          onClick={() => router.push("/users/1")}
+        >
           Sign up
         </Button>
       </Box>
